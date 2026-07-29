@@ -3,10 +3,15 @@
 /target2
 **/target/
 **/*.rs.bk
-.env
 .DS_Store
 **/test_snapshots
 
 # Test snapshots
 **/test_snapshots/
 .keys/private.pem
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+config.bat
+node_modules
