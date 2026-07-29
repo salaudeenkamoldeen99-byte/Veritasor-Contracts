@@ -68,7 +68,7 @@ pub use events::{
     RevocationCancelledEvent, RevocationCommittedEvent, RevocationProposedEvent,
 };
 pub use fees::{collect_flat_fee, CollectorRotationProposal, FlatFeeConfig};
-pub use multisig::{Proposal, ProposalAction, ProposalStatus, ProposalChange, ProposalEffect};
+pub use multisig::{Proposal, ProposalAction, ProposalStatus};
 pub use rate_limit::RateLimitConfig;
 pub use registry::{BusinessRecord, BusinessStatus};
 
@@ -2107,7 +2107,6 @@ impl AttestationContract {
                 let staking_client = AttestorStakingClient::new(&env, &staking_addr);
                 staking_client.slash(&d.attestor, &1000i128, &dispute_id);
             }
-
             if let Some(attestor) =
                 dispute::get_attestor_for_attestation(&env, &d.business, &d.period)
             {
